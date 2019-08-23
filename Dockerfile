@@ -1,14 +1,10 @@
 FROM node:carbon
 
-WORKDIR /tmp
-
-COPY package*.json ./
-
-RUN npm install --save
-
 WORKDIR /app
 
 COPY . /app
+
+RUN npm install --save
 
 EXPOSE 80
 CMD ["npm", "start"]
